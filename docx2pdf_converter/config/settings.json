@@ -1,0 +1,5 @@
+{
+    "input_dir": "data/input",
+    "output_dir": "data/output",
+    "soffice_path":"C:\\Program Files\\LibreOffice\\program\\soffice.exe"
+}
