@@ -1,0 +1,104 @@
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background-primary: #fff;
+$color-background-secondary: #F7F7F7;
+$color-background-tertiary: #EDEDED;
+$color-background-fourth: #FBF2FF;
+$color-background-fifth: #000;
+$color-icon-primary: #8B8B8B;
+$color-icon-secondary: #343434;
+
+
+
+$font-family-primary: 'Shrikhand', serif;
+$font-family-secondary: 'Roboto' , sans-serif;
+
+$num-cards-resto1: 9;
+$num-cards-resto2: 10;
+$num-cards-resto3: 9;
+$num-cards-resto4: 9;
+
+
+
+
+$font-palette:(
+    font-family:(
+        title: $font-family-primary,
+        text: $font-family-secondary,
+    ),
+    font-weight:(
+        thin: 100,
+        light: 300,
+        regular: 400,
+        medium: 500,
+        bold: 700,
+        black: 900
+    ),
+    font-size:(
+        very-small: 12px,
+        small: 14px,
+        normal: 16px,
+        normal-plus: 18px,
+        big: 20px,
+        very-big: 24px,
+        title-big: 28px,
+    )
+);
+
+
+$color-palette:(
+    violet: $color-primary,
+    pink: $color-secondary,
+    green: $color-tertiary,
+
+    white: $color-background-primary,
+    light-grey: $color-background-secondary,
+    heavy-grey: $color-background-tertiary,
+    light-pink: $color-background-fourth,
+    black: $color-background-fifth,
+
+    light-grey-icon: $color-icon-primary,
+    heavy-grey-icon: $color-icon-secondary,
+);
+
+$spacing-palette:(
+    px:(
+        0: 0px,
+        5: 5px,
+        10: 10px,
+        15: 15px,
+        20: 20px,
+        24: 24px,
+        25: 25px,
+        30: 30px,
+        35: 35px,
+        40: 40px,
+        50: 50px,
+        60: 60px,
+        70: 70px,
+        80: 80px,
+        260: 260px,
+        0Minus: 0px,
+        10Minus: -10px,
+        15Minus: -15px,
+        20Minus: -20px,
+        30Minus: -30px,
+        40Minus: -40px,
+        60Minus: -60px,
+    ),
+
+    percent:(
+        5: 5%,
+        10: 10%,
+        15: 15%,
+        20: 20%,
+        25: 25%,
+        30: 30%,
+        35: 35%,
+        40: 40%,
+        42: 42%,
+        45: 45%,
+        50: 50%,
+    )
+);

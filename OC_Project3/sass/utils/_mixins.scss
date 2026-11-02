@@ -1,0 +1,266 @@
+@mixin font($palette-type, $value){
+    $palette: map-get($map: $font-palette, $key: $palette-type);
+    
+    @if($palette-type == font-family){
+        font-family: map-get($map: $palette, $key: $value);
+    }@else if($palette-type == font-weight){
+        font-weight: map-get($map: $palette, $key: $value);
+    }@else if($palette-type == font-size){
+        font-size: map-get($map: $palette, $key: $value);
+    }
+}
+
+@mixin color($type, $value){
+    @if($type == color){
+        color: map-get($map: $color-palette, $key: $value);
+    }@else if($type == background-color){
+        background-color: map-get($map: $color-palette, $key: $value);
+    }
+}
+
+@mixin box-shadow($inset: out, $value: nd){
+    @if($inset == out){
+        @if($value == heavy){
+            box-shadow:  0 4px 8px 0 rgba(0,0,0,0.4);
+        }@else if($value == super-heavy){
+            box-shadow:  0 8px 16px 0 rgba(0,0,0,0.4);
+        }@else if($value == light){
+            box-shadow:  0 4px 8px 0 rgba(0,0,0,0.2);
+        }@else{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);;
+        }
+    }@else{
+        @if($value == heavy){
+            box-shadow: inset 0 4px 8px 0 rgba(0,0,0,0.4);
+        }@else if($value == super-heavy){
+            box-shadow: inset 0 8px 16px 0 rgba(0,0,0,0.4);
+        }@else{
+            box-shadow: inset 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+    }
+}
+
+@mixin reset-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin button($background, $color, $border-radius){
+    @include color(background-color, $background);
+    @include color(color, $color);
+    border-radius: $border-radius;
+}
+
+@mixin spacing($type, $size-type, $value, $dir: none){
+    $palette: map-get($map: $spacing-palette, $key: $size-type);
+
+    @if($type == padding){
+        @if($dir == top){
+            padding-top: map-get($map: $palette, $key: $value);
+        }@else if($dir == right){
+            padding-right: map-get($map: $palette, $key: $value);
+        }@else if($dir == bottom){
+            padding-bottom: map-get($map: $palette, $key: $value);
+        }@else if($dir == left){
+            padding-left: map-get($map: $palette, $key: $value);
+        }@else{
+            padding: map-get($map: $palette, $key: $value);
+        }
+    }
+
+    @if($type == margin){
+        @if($dir == top){
+            margin-top: map-get($map: $palette, $key: $value);
+        }@else if($dir == right){
+            margin-right: map-get($map: $palette, $key: $value);
+        }@else if($dir == bottom){
+            margin-bottom: map-get($map: $palette, $key: $value);
+        }@else if($dir == left){
+            margin-left: map-get($map: $palette, $key: $value);
+        }@else{
+            margin: map-get($map: $palette, $key: $value);
+        }
+    }
+
+    @if($type == gap){
+        gap: map-get($palette, $value);
+    }
+}
+
+@mixin title($title: normal){
+    @if($title == tablet){
+        flex: 1 1 100%;
+        @include spacing(padding, px, 50, bottom);
+        @include font(font-size,title-big);
+    }@else if($title == desktop){
+        flex: 1 1 100%;
+        @include spacing(padding, px, 80, bottom);
+        @include font(font-size,title-big);
+    }@else{
+        flex: 1 1 100%;
+        @include spacing(padding, px, 30, bottom);
+    }
+}
+
+@mixin image-cards(){
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+@mixin heartIcons-linear(){
+    
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    color: transparent;
+    @include font(font-weight, bold);
+}
+
+
+@mixin link-wrap(){
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin display-flex-center(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin loader-wrapper(){
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    @include display-flex-center();
+}
+
+@mixin display-none(){
+    visibility: hidden;
+    animation: display-none-while-loading 1ms 3s forwards;
+}
+
+@mixin loader(){
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid transparent;
+    border-top-color: $color-primary;
+    border-radius: 50%;
+    animation: loader-animation 800ms ease infinite;
+}
+
+@mixin lighten-button(){
+    background: lighten($color: $color-secondary, $amount: 0.5);
+    @include box-shadow(out, super-heavy);
+}
+
+
+@keyframes card-delay-keyframes{
+
+    from{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loader-animation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes display-none-while-loading{
+   
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes stop-display-loader{
+   
+    to{
+        visibility: hidden;
+    }
+}
+
+@keyframes cancel-hidden-animation{
+    to{
+        visibility: visible;
+    }
+}
+
+@keyframes fill-heart{
+ 
+    10%{
+        background: linear-gradient($color-background-primary 90%, $color-secondary 10% );
+        @include heartIcons-linear();
+        
+    }
+    20%{
+        background: linear-gradient($color-background-primary 80%,  $color-secondary 20%);
+        @include heartIcons-linear();
+        
+    }
+    30%{
+        background: linear-gradient($color-background-primary 70%,  $color-secondary 30%);
+        @include heartIcons-linear();
+        
+    }
+    40%{
+        background: linear-gradient($color-background-primary 60%,  $color-secondary 40%);
+        @include heartIcons-linear();
+        
+    }
+    50%{
+        background: linear-gradient($color-background-primary 50%,  $color-secondary 50%);
+        @include heartIcons-linear();
+        
+    }
+    60%{
+        background: linear-gradient($color-background-primary 40%,  $color-secondary 60%);
+        @include heartIcons-linear();
+        
+    }
+    70%{
+        background: linear-gradient($color-background-primary 30%,  $color-secondary 70%);
+        @include heartIcons-linear();
+        
+    }
+    80%{
+        background: linear-gradient( $color-background-primary 20%,  $color-secondary 80%);
+        @include heartIcons-linear();
+        
+    }
+    90%{
+        background: linear-gradient($color-background-primary 10%,  $color-secondary 90%);
+        @include heartIcons-linear();
+        
+    }
+    100%{
+        background: linear-gradient( $color-primary, $color-secondary);
+        @include heartIcons-linear();
+        
+    }
+}
+
+
+
+
+
+
+

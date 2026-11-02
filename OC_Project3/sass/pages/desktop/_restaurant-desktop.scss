@@ -1,0 +1,95 @@
+@media all and (min-width: 992px){
+    .header{
+
+        &__icons{
+           display: none;
+        }
+    }
+
+    .restaurant{
+        
+        &__wrapper{
+            @include spacing(padding, px, 20, top);
+            @include spacing(padding, px, 50, right);
+            @include spacing(padding, px, 50, left);
+            @include spacing(padding, px, 20, bottom);
+
+            &__image{
+                height: 250px;
+                border-radius: 10px;
+            }
+        }
+    
+        &__dishes{
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            @include spacing(gap, px, 20);
+            @include spacing(padding, px, 40);
+            @include spacing(padding, px, 60, top);
+            
+
+            &--menu{
+                flex: 1 1 335px;
+                max-width: 400px;
+            }
+
+            &__title{
+                @include font(font-size, title-big);
+                width: 100%;
+            }
+
+            &__icons-wrapper{
+                right: 50px;
+                top: 60px;
+                
+                &__icons{
+                    @include font(font-size, title-big);
+                }
+            }
+
+            &__under-title{
+                @include spacing(padding, px, 5, bottom);
+                @include spacing(padding, px, 10, top);
+            }
+
+            &__green-line{
+                width: 35px;
+                border: 2px solid $color-tertiary;
+                @include spacing(margin, px, 15, bottom);
+            }
+
+            &__cards{
+                @include spacing(margin, px, 15, bottom);
+                
+                
+                &__text-wrapper {
+                    width: 400px;
+                    @include font(font-size, normal);
+                }
+
+                &__title{
+                    @include spacing(padding, px, 10, bottom);
+                    @include font(font-size, big);
+                }
+            }
+
+            &__order-button{
+                width: 100%;
+                @include spacing(padding,px,60, bottom);
+
+                &__nav{
+                width: 300px;
+    
+                    &__text{
+                        @include font(font-size, normal-plus);
+                        @include font(font-weight, medium);
+                    }
+                }
+            }
+        }
+    }
+}

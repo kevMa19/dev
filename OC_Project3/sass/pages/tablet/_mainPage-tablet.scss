@@ -1,0 +1,115 @@
+@media (min-width: 768px) and (max-width: 992px){
+
+    .header{
+        &__logo-image{
+            width: 280px;
+        }
+
+        &__location-card{
+            @include spacing(padding, px, 20);
+    
+            &__text{ 
+                @include font(font-size, big);
+            }
+        }
+    }
+
+    .nav{
+        @include spacing(gap, px, 60);
+        @include spacing(padding, px, 60, top);
+        @include spacing(padding, px, 80, bottom);
+
+        &__title{
+            @include font(font-size, title-big);
+        }
+
+        &__text{
+            @include font(font-size, big);
+        }
+
+        &__explore-button{
+            width: 40%;
+
+            &__text{
+                @include font(font-size, normal-plus);
+            }
+        }
+    }
+
+    .how-section{
+        @include spacing(padding, px, 40);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &__title{
+            @include title(tablet);
+            text-align: center;
+        }    
+        &__cards{
+            width: 70%;
+            @include spacing(margin, px, 40, bottom);
+            justify-content: center;
+            @include spacing(gap, px, 40);
+            position: relative;
+            
+            &__icons{ 
+                @include font(font-size, big);
+                position: absolute;
+                left: 60px;
+            }
+    
+            &__text{
+                @include font(font-size, normal-plus);
+                
+            }
+        }
+    }
+
+    .restaurant-section{
+        @include spacing(padding, px, 40, top);
+        @include spacing(padding, px, 50, bottom);
+        @include spacing(margin, px, 0, bottom);
+        display: flex;
+        flex-wrap: wrap;
+        @include spacing(gap, px, 20);
+        
+        &__title{
+           @include title(tablet);
+           text-align: center;
+        }
+    
+        &__cards{
+            flex: 1 1 335px;
+            height: 280px;
+            @include spacing(margin, px, 0);
+        }
+    }
+
+    .footer{
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

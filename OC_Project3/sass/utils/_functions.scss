@@ -1,0 +1,8 @@
+@function lightness-shift($type, $color, $value){
+    @if($type == lighten){
+        @return lighten($color, $value);
+    }@else{
+        @return darken($color, $value);
+    }
+}
+

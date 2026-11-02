@@ -1,0 +1,111 @@
+@media all and (min-width: 992px){
+    .header{
+        @include spacing(padding, px, 5, top);
+        @include spacing(padding, px, 5, bottom);
+        display: flex;
+        &__logo-wrapper{
+            flex: 1 1 80%;
+            justify-content: start;
+        }
+        &__logo-image{
+            width: 250px;
+            height: 100%;
+            @include spacing(padding, px, 10, left);
+        }
+        &__location-card{
+            flex: 1 1 20%;
+            @include spacing(padding,px,50,right);
+            @include spacing(padding,px,0,left);
+            &--desktop{
+                box-shadow: none;
+                @include color(background-color, white);
+            }
+        }
+    }
+    
+    .nav{
+        width: 60%;
+        @include spacing(gap, px, 80);
+       
+
+        &__wrapper{
+            @include spacing(padding, px, 50, top);
+            @include spacing(padding, px, 50, top);
+            display: flex;
+            justify-content: center
+        }
+
+       &--desktop{
+            @include box-shadow(in, light);
+            border-radius: 25px;
+            @include spacing(padding, px, 80, top);
+            @include spacing(padding, px, 80, bottom);
+            
+       }
+
+       &__title{
+        @include font(font-size, title-big);
+       }
+    
+        &__text{
+            @include font(font-size, big);
+        }
+    
+        &__explore-button{
+            width: 40%;
+        }
+    }
+
+    .main-sections-wrapper{
+        @include spacing(padding,px,10,left);
+        @include spacing(padding,px,20,right);
+        @include spacing(padding, px, 80, top);
+        @include spacing(padding, px, 80, bottom);
+        display: flex;
+    }
+
+    .how-section{
+        flex: 1 1 30%;
+        
+        &__title{
+            @include title(desktop);
+            text-align: center;
+        }  
+         
+        &__cards{
+            @include spacing(padding, px, 24);
+            @include spacing(margin, px, 50, bottom);
+            position: relative;
+        }  
+    }
+    
+    .restaurant-section{
+        flex: 1 1 70%;
+        border-radius: 25px;
+        @include spacing(padding, px, 40, top);
+        @include spacing(padding, px, 50, bottom);
+        @include spacing(margin, px, 0, bottom);
+        display: flex;
+        flex-wrap: wrap;
+        @include spacing(gap, px, 20);
+    
+        &__title{
+            @include title(tablet);
+            text-align: center;
+        }
+     
+        &__cards{
+            flex: 1 1 300px;
+            max-width: 330px;
+            height: 250px;
+            @include spacing(margin, px, 0);
+            position: relative;
+        }
+    }
+
+    .footer{
+        text-align: center;
+    }
+}
+
+    

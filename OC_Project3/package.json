@@ -1,0 +1,19 @@
+{
+  "name": "project3_code",
+  "version": "1.0.0",
+  "description": "Salut c moi",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Junyoung190198/OC_Project3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Junyoung190198/OC_Project3/issues"
+  },
+  "homepage": "https://github.com/Junyoung190198/OC_Project3#readme"
+}

@@ -1,0 +1,19 @@
+
+body, p{
+    @include font(font-family, text);
+    @include font(font-weight, regular);
+    @include font(font-size, normal);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{ 
+    list-style: none;
+}
+
+ul{
+    @include spacing(padding, px, 0);
+}

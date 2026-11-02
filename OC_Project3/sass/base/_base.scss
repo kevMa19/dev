@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body{
+    box-sizing: border-box;
+    
+}
+
+.loader{
+    @include loader-wrapper();
+    visibility: visible;
+
+    &--active{
+        animation: stop-display-loader 3s forwards;
+    }
+    
+}
+
+.loader::after{
+    @include loader();
+}
+

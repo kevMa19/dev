@@ -1,0 +1,72 @@
+@media (min-width: 768px) and (max-width: 992px){
+    .restaurant{
+        
+        &__wrapper{
+            &__image{
+                height: 400px;
+            }
+        }
+
+        &__dishes{
+            @include spacing(padding, px, 40);
+            @include spacing(padding, px, 40, bottom);
+            @include spacing(padding, px, 60, top);
+            @include spacing(margin,px, 50Minus,top);
+    
+            &__title{
+                @include font(font-size,title-big);
+                @include spacing(padding, px, 80, bottom);
+            }
+
+            
+            &__icons-wrapper{
+                right: 50px;
+                top: 60px;
+                
+                &__icons{
+                    @include font(font-size, title-big);
+                }
+            }
+
+            &--menu{
+                @include spacing(padding, px, 70, bottom);
+                @include spacing(padding, percent, 15, right);
+                @include spacing(padding, percent, 15, left);
+            }
+
+            &__under-title-wrapper{
+                @include spacing(padding, px, 30, bottom);
+                @include spacing(padding, percent, 42 ,left);
+        
+                &__under-title{
+                    @include font(font-size, normal-plus);
+                }
+            }
+
+            &__cards{
+
+                &__text-wrapper {
+                    width: 500px;
+                    @include font(font-size, normal);
+                }
+
+                &__title{
+                    @include font(font-size, big);
+                }
+            }
+
+            &__order-button{
+                @include spacing(padding,px,70, bottom);
+
+                &__nav{
+                    width: 300px;
+
+                    &__text{
+                        @include font(font-size, normal-plus);
+                    }
+                   
+                }
+            }
+        }
+    }
+}
